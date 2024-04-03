@@ -7,9 +7,9 @@ using std::cin;
 using std::string;
 
 
-int main215() {
+int main() {
 	
-	// 1. cout ¿í¶È¡¢Ìî³ä
+	// 1. cout å®½åº¦ã€å¡«å……
 	//cout.precision(5);
 	//cout << 1.23456789 << endl; // 1.2346
     //cout.width(30);

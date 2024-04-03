@@ -6,7 +6,7 @@ int example4(int);
 void example7(int, int);
 
 
-int main27() {
+int main() {
 
 	int hour;
 	int minute;

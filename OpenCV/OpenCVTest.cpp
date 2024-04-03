@@ -7,7 +7,7 @@
 using namespace std;
 using namespace cv;
 
-int main01()
+int main()
 {
 
     Mat src = imread("C:\\Users\\Administrator\\Desktop\\58b2f81afccf89aa4da3baafe9ba2f94a4cdd4f4.jpg@240w_240h_1c_1s_!web-avatar-space-header.webp");

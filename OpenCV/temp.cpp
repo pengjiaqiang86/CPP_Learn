@@ -3,16 +3,16 @@
 using namespace std;
 
 /*
-��Ԫ���ڳ����У���һЩ˽�����ԣ�Ҳ���������һЩ���⺯��������ʣ���Ҫʹ����Ԫ
-���ã���һ���������������һ�����˽�г�Ա
-�ؼ��֣�friend
-����ʵ�ַ�ʽ��1.ȫ�ֺ�������Ԫ 2.������Ԫ 3.��Ա��������Ԫ
+友元：在程序中，有一些私有属性，也想让类外的一些特殊函数或类访问，需要使用友元
+作用：让一个函数或类访问另一个类的私有成员
+关键字：friend
+三种实现方式：1.全局函数做友元 2.类做友元 3.成员函数做友元
 */
 
 
 class Test1 {
 
-    // 3.��ĳ�Ա������Ϊ��Ԫ��friend�ؼ���+������
+    // 3.类的成员函数作为友元，friend关键字+类声明
     friend void Test3::info1();
     friend void Test3::info2();
 
@@ -41,14 +41,14 @@ public:
         t = new Test1;
     }
 
-    // ����info1����˽������
+    // 允许info1访问私有属性
     void info1() {
 
         cout << "public m_A: " << t->m_A << endl;
         cout << "private m_B: " << t->m_B << endl;
     }
 
-    // ������info2����˽������
+    // 不允许info2访问私有属性
     void info2() {
 
         cout << "public m_A: " << t->m_A << endl;
@@ -59,7 +59,7 @@ public:
     Test1* t;
 };
 
-// 3.��ĳ�Ա������Ϊ��Ԫ
+// 3.类的成员函数作为友元
 void friendMethod() {
     Test3 t;
     t.info1();

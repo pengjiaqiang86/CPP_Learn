@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-int main24() {
+int main() {
 
 	double x = 6.25;
 	double y = sqrt(x);

@@ -1,0 +1,1 @@
+img_path = "G:/Program/Python/OpenCV/"

@@ -31,6 +31,12 @@ private:
 };
 
 
+ostream& operator<<(ostream& cout, Point& p) {
+    cout << "Point: " << "x = " << p.x << " , " << "y = " << p.y;
+    return cout;
+}
+
+
 int main(int argc, char const *argv[])
 {
     Point p1, p2;
@@ -48,7 +54,8 @@ int main(int argc, char const *argv[])
 
     vector<Point> pList = line.getPoint();
     for (Point p : pList) {
-        cout << p.x << " " << p.y << endl;
+        // cout << p.x << " " << p.y << endl;
+        cout << p << endl;
     }
 
     system("pause");

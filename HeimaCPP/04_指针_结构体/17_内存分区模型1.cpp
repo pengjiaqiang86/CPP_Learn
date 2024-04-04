@@ -24,7 +24,6 @@ const int const_global_b = 20;
 
 int main(int argc, char const *argv[])
 {
-
     // 局部变量
     int local_a = 10;
     int local_b = 20;
@@ -32,6 +31,28 @@ int main(int argc, char const *argv[])
     // 静态变量
     static int static_a = 10;
     static int static_b = 20;
+
+    // const修饰的变量: const修饰的全局变量 和 const修饰的局部变量
+    // const修饰的全局变量在全局区
+    const int const_local_a = 10;
+    const int const_local_b = 20;
+
+    cout << "global a: " << (int) &global_a << endl;
+    cout << "global b: " << (int) &global_b << endl;
+    cout << "local a:  " << (int) &local_a  << endl;
+    cout << "local b:  " << (int) &local_b  << endl;
+    cout << "static a: " << (int) &static_a << endl;
+    cout << "static b: " << (int) &static_b << endl;
+
+    cout << "=============================="<< endl;
+
+    // 字符串常量
+    cout << "string: " << (int)&"Hello World" << endl;
+
+    cout << "const global a " << (int) &const_global_a << endl;
+    cout << "const global b " << (int) &const_global_b << endl;
+    cout << "const local a " << (int) &const_local_a << endl;
+    cout << "const local b " << (int) &const_local_b << endl;
 
     /*
     global a:       4206608
@@ -49,28 +70,6 @@ int main(int argc, char const *argv[])
 
     可以看出全局变量和静态变量存放在相近的区域，即全局区
     */
-    cout << "global a: " << (int) &global_a << endl;
-    cout << "global b: " << (int) &global_b << endl;
-    cout << "local a: " << (int) &local_a << endl;
-    cout << "local b: " << (int) &local_b << endl;
-    cout << "static a: " << (int) &static_a << endl;
-    cout << "static b: " << (int) &static_b << endl;
-
-    cout << "=============================="<< endl;
-
-    // 字符串常量
-    cout << "string: " << (int)&"Hello World" << endl;
-
-    // const修饰的变量
-    // const修饰的全局变量 和 const修饰的局部变量
-    const int const_local_a = 10;
-    const int const_local_b = 20;
-
-    cout << "const global a " << (int) &const_global_a << endl;
-    cout << "const global b " << (int) &const_global_b << endl;
-    cout << "const local a " << (int) &const_local_a << endl;
-    cout << "const local b " << (int) &const_local_b << endl;
-
 
     system("pause");
     return 0;

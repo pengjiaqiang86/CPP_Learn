@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
     Person * p = NULL;
     p->info();
     // 这一行在VS会运行失败：提示this是nullptr，读取访问权限冲突；
-    // 在g++中正常运行，但是下面showAge()、system()没有执行！
+    // 在g++中也运行失败（错误码3221225477），而且下面showAge()、system()没有执行
     p->showName();
     p->showAge();
 

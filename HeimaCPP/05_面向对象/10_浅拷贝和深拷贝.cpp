@@ -52,7 +52,7 @@ int main(int argc, char const *argv[])
     Person p1("person1", 10);
     Person p2(p1);
 
-    cout << &p1.m_Age << " " << &p2.m_Age << endl;
+    cout << &p1.m_Age << " " << &p2.m_Age << endl; // 0x61fdd0 0x61fda0
 
     system("pause");
     return 0;

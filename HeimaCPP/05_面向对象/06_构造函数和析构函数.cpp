@@ -19,10 +19,10 @@ using namespace std;
 class Person {
 public:
     // 构造函数的定义
-    Person(string id, string name, bool male) {
+    Person(string id, string name, bool gender) {
         m_ID = id;
         m_Name = name;
-        isMale = male;
+        isMale = gender;
     }
 
     // 构造函数的重载

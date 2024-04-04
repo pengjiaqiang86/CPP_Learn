@@ -19,7 +19,7 @@ int main() {
 	int a = 10;
 	int* p = &a;
 
-	cout << (int)p << endl;
+	cout << (intptr_t)p << endl;
 	cout << p << endl;
 
 	// 套娃
@@ -36,10 +36,12 @@ int main() {
 	cout << "sizeof pp = " << sizeof pp << endl; // 8
 	cout << "sizeof pp = " << sizeof ppp << endl; // 8
 
+	// 字符指针
 	char c = 'c';
 	char* pc = &c;
-	cout << "sizeof pc = " << sizeof pc << endl; // 8
+	cout << "sizeof pointer char = " << sizeof pc << endl; // 8
 
+	// 结构体指针
 	cout << "sizeof struct Student = " << sizeof(Student *) << endl; // 8
 
 	system("pause");

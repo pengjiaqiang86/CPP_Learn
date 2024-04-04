@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 /*
 C++程序在执行时，内存划分为4部分
 1. 代码区：存放CPU执行的机器指令。特点：共享、只读
@@ -32,8 +31,8 @@ int* funcPile() {
 int main(int argc, char const *argv[])
 {
     // 1. 返回局部变量的地址
-    // int* p = funcStack();
-    // cout << p << endl; // 0
+//     int* p = funcStack();
+//     cout << p << endl; // 0
 
     // 2. new关键字在堆区创建变量
     int* p = funcPile();
@@ -42,4 +41,3 @@ int main(int argc, char const *argv[])
     system("pause");
     return 0;
 }
-

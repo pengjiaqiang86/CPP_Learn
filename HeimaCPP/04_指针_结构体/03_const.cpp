@@ -23,8 +23,8 @@ int main() {
 	cout << b << endl;
 	cout << p << endl;
 
-	// p = &b;
-	// *p = 20; // error
+	// p = &b; // 可以改变指向
+	// *p = 20; // error，不可以修改指针指向的值
 
 	cout << a << endl;
 	cout << b << endl;
@@ -41,7 +41,7 @@ int main() {
 	cout << bb << endl;
 	cout << pp << endl;
 
-	 //pp = &b; // error
+	 //pp = &b; // error，不可以修改指向
 	 *pp = 20;
 
 	cout << aa << endl;

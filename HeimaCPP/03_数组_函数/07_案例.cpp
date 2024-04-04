@@ -2,6 +2,11 @@
 
 using namespace std;
 
+/**
+ * 计算每个学生的总成绩
+ * 
+*/
+
 int main() {
 	int scores[3][4] = {
 		{100, 100, 100},
@@ -14,7 +19,7 @@ int main() {
 		for (int g = 0; g < 3; g++) {
 			count += scores[p][g];
 		}
-		cout << p << " th student's grade is: " << count << endl;
+		cout << p << " The student's grade is: " << count << endl;
 	}
 
 	system("pause");

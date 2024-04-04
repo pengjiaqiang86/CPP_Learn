@@ -2,11 +2,13 @@
 
 using namespace std;
 
+/*
+重载关系运算符
+*/
+
 class MyInteger {
 public:
-    MyInteger() {
-
-    }
+    MyInteger() {}
 
     MyInteger(int value) {
         this->m_Value = value;

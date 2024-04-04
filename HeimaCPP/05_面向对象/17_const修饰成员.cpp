@@ -14,6 +14,8 @@ const修饰成员函数，称为常函数。
 
 class Person {
 public:
+    Person() {}
+    
     // 常函数：
     // this指针本质上是指针常量，即不允许修改指针的指向
     // 在成员函数中加上const，修饰的是this，让this指针指向的值也不可以修改
@@ -23,9 +25,7 @@ public:
         this->m_Age = 18; // OK
     }
 
-    void func() {
-
-    }
+    void func() {}
 
     string m_Name;
     mutable int m_Age;

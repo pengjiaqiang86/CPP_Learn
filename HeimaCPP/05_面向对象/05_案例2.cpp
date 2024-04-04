@@ -30,8 +30,8 @@ int main(int argc, char const *argv[])
     circle.setCenter(p1);
     circle.setRadius(1.0);
 
-    cout << circle.relativePosition(p2) << endl; // 1
-    cout << circle.relativePosition(p3) << endl; // 2
+    cout << circle.relativePosition(p2) << endl; // 2
+    cout << circle.relativePosition(p3) << endl; // 1
 
     system("pause");
     return 0;

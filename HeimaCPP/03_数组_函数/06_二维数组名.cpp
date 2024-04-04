@@ -6,6 +6,10 @@ using namespace std;
 数组名：
 1. 可以查看二维数组占用的内存大小
 2. 可以获取数组的首地址
+
+问题：int*转int：VS能通过编译，但是g++不行，
+解决：可以将int*强制转为intptr_t，intptr_t实际上是long long
+`typedef long long intptr_t`
 */
 int main() {
 	int arr[2][3] = {
@@ -21,21 +25,21 @@ int main() {
 	cout << "----------------------------" << endl;
 
 	// 地址
-	cout << "数组首地址 " << (int)arr << endl; // 12188864
-	cout << "数组首地址+1 " << (int)(arr + 1) << endl; // 12188876 // +1偏移了一行
+	cout << "数组首地址 " << (intptr_t)arr << endl; // 12188864
+	cout << "数组首地址+1 " << (intptr_t)(arr + 1) << endl; // 12188876 // +1偏移了一行
 
-	cout << "第一行首地址 " << (int)arr[0] << endl; // 12188864
-	cout << "第一行首地址+1 " << (int)(arr[0] + 1) << endl; // 12188868 // +1偏移了一个元素
+	cout << "第一行首地址 " << (intptr_t)arr[0] << endl; // 12188864
+	cout << "第一行首地址+1 " << (intptr_t)(arr[0] + 1) << endl; // 12188868 // +1偏移了一个元素
 
-	cout << "第一个元素首地址 " << (int)&arr[0][0] << endl; // 12188864
-	cout << "最后一个元素首地址 " << (int)(&arr[0][0] + 6) << endl; // 12188888 // 偏移6个元素
+	cout << "第一个元素首地址 " << (intptr_t)&arr[0][0] << endl; // 12188864
+	cout << "最后一个元素首地址 " << (intptr_t)(&arr[0][0] + 6) << endl; // 12188888 // 偏移6个元素
 
 	cout << "----------------------------" << endl;
 
 	// 值
-	cout << (int)*arr << endl; // 12188864
-	cout << (int)*(arr + 3) << endl; // 12188900 实际偏转了3行
-	cout << (int)*(arr + 6) << endl; // 12188936 偏转了6行
+	cout << (long long)*arr << endl; // 12188864
+	cout << (long long)*(arr + 3) << endl; // 12188900 实际偏转了3行
+	cout << (long long)*(arr + 6) << endl; // 12188936 偏转了6行
 
 	cout << (int)*arr[0] << endl; // 1
 	cout << (int)*(arr[0] + 1) << endl; // 2

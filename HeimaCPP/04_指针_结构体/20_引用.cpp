@@ -24,7 +24,7 @@ void test1() {
     // i = 10       newName = 10
     // i = 6422036  newName = 6422036
     cout << "i = " << i << " newName = " << newName << endl;
-    cout << "i = " << (int) &i << " newName = " << (int) &newName << endl;
+    cout << "i = " << (intptr_t) &i << " newName = " << (intptr_t) &newName << endl;
 
     // 通过引用修改变量值
     // i = 20       newName = 20
@@ -37,14 +37,12 @@ void test2() {
     int a = 10;
 
     // 1. 必须初始化
-    // error: 'b' declared as reference but not initialized
-    // int &b;
+    // int &b; // error: 'b' declared as reference but not initialized
 
     // 2. 初始化之后不能修改
-    // error: redeclaration of 'int& b'
     int &b = a;
     int c = 20;
-    // int &b = c;
+    // int &b = c; // error: redeclaration of 'int& b'
 }
 
 // 3. 常量引用
@@ -64,8 +62,8 @@ void test3() {
 
 int main(int argc, char const *argv[])
 {
-    // test1();
-    // test2();
+    test1();
+    test2();
     test3();
 
     system("pause");

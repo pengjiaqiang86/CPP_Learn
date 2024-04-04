@@ -12,7 +12,6 @@ int main() {
 	cout << p << endl; // 00000000
 	//*p = 100; // 报错
 
-
 	system("pause");
 
 	return 0;

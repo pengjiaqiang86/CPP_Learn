@@ -19,7 +19,7 @@ class Animal    size(1):
         +---
 
 -----------------------------------------------
-Animal加virtual关键字，4字节（VS开发者工具，可能默认32位；所以和g++ sizeof显示的结果不一致）
+Animal加virtual关键字，4字节（VS开发者工具，可能默认32位；所以和g++ sizeof显示的结果不一致，g++为8字节）
 
 class Animal    size(4):
         +---
@@ -36,21 +36,6 @@ Animal::speak this adjustor: 0
 -----------------------------------------------
 Animal加virtual关键字，但是Cat类不重写speak函数
 
-class _s__CatchableType size(28):
-        +---
- 0      | properties
- 4      | pType
- 8      | _PMD thisDisplacement
-20      | sizeOrOffset
-24      | copyFunction
-        +---
-
-class _s__CatchableTypeArray    size(4):
-        +---
- 0      | nCatchableTypes
- 4      | arrayOfCatchableTypes
-        +---
-
 class Cat       size(4):
         +---
  0      | +--- (base class Animal)
@@ -65,21 +50,6 @@ Cat::$vftable@:
 
 -----------------------------------------------
 Animal加virtual关键字，Cat类重写speak函数
-
-class _s__CatchableType size(28):
-        +---
- 0      | properties
- 4      | pType
- 8      | _PMD thisDisplacement
-20      | sizeOrOffset
-24      | copyFunction
-        +---
-
-class _s__CatchableTypeArray    size(4):
-        +---
- 0      | nCatchableTypes
- 4      | arrayOfCatchableTypes
-        +---
 
 class Cat       size(4):
         +---
@@ -109,7 +79,7 @@ public:
 class Cat : public Animal {
 public:
     // 重写父类虚函数。子类从父类继承的虚函数表 内部会被替换成 子类的虚函数地址
-    void speak() {
+    virtual void speak() {
         cout << "Cat speak" << endl;
     }
 };
@@ -123,11 +93,14 @@ void doSpeak(Animal& animal) {
 int main(int argc, char const *argv[])
 {
     Cat cat;
+
     doSpeak(cat); // 加virtual前： Animal speak
-    doSpeak(cat); // 加virtual后： Cat speak
+    doSpeak(cat); // 加virtual后，不重写Cat的方法： Animal speak
+    doSpeak(cat); // 加virtual后，重写Cat的方法： Cat speak
 
     cout << "sizeof class Animal = " << sizeof(Animal) << endl; // 加virtual前：1
-    cout << "sizeof class Animal = " << sizeof(Animal) << endl; // 加virtual后：8
+    cout << "sizeof class Animal = " << sizeof(Animal) << endl; // 加virtual后，不重写：8
+    cout << "sizeof class Animal = " << sizeof(Animal) << endl; // 加virtual后，重写：8
 
     system("pause");
     return 0;

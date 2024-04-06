@@ -47,20 +47,20 @@ class Base2 : virtual public Base0 {
 //  0      | | {vbptr} // 虚基类指针 virtual base pointer，指向vbtable（虚基类表）
 //         | +---
 //  4      | +--- (base class Base2)
-//  4      | | {vbptr}
+//  4      | | {vbptr} // 虚基类指针
 //         | +---
 //         +---
-//         +--- (virtual base Base0)
+//         +--- (virtual base Base0) // 虚基类
 //  8      | m_Age // 只有一个了
 //         +---
 //
-// Base3::$vbtable@Base1@:
+// Base3::$vbtable@Base1@: // Base1的虚基类表
 //  0      | 0
-//  1      | 8 (Base3d(Base1+0)Base0)
+//  1      | 8 (Base3d(Base1+0)Base0) // 虚基类指针的偏移量，偏移8之后指向m_Age
 
-// Base3::$vbtable@Base2@:
+// Base3::$vbtable@Base2@: // Base2的虚基类表
 //  0      | 0
-//  1      | 4 (Base3d(Base2+0)Base0)
+//  1      | 4 (Base3d(Base2+0)Base0) // 虚基类指针的偏移量，偏移4之后指向m_Age
 // vbi:       class  offset o.vbptr  o.vbte fVtorDisp
 //            Base0       8       0       4 0
 class Base3: public Base1, public Base2 {

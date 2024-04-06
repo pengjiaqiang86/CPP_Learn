@@ -29,24 +29,24 @@ public:
     }
 
     // 问题1
-    // ~Animal() {
-    //     cout << "Animal析构函数" << endl;
-    // }
+    ~Animal() {
+        cout << "Animal析构函数" << endl;
+    }
 
     // 问题1的解决：修改为虚析构函数
     // virtual ~Animal() {
     //     cout << "Animal虚析构函数" << endl;
     // }
 
-    // 问题1的解决：修改为纯虚析构函数。需要声明也需要实现
-    virtual ~Animal() = 0;
+    // 问题1的解决：修改为纯虚析构函数。需要声明也需要实现（类外实现）
+    // virtual ~Animal() = 0;
 
     virtual void speak() = 0;
 };
 
-Animal::~Animal() {
-    cout << "Animal纯虚析构函数" << endl;
-}
+// Animal::~Animal() {
+//     cout << "Animal纯虚析构函数" << endl;
+// }
 
 class Cat : public Animal {
 public:
@@ -66,7 +66,7 @@ public:
     }
 
     void speak() {
-        cout << *m_Name << "Cat is speaking" << endl;
+        cout << *m_Name << " Cat is speaking" << endl;
     }
 
     string * m_Name;
@@ -78,7 +78,7 @@ public:
     Cat构造函数
     TomCat is speaking
     Animal析构函数
-注意：这里没有调用子类的析构函数，也就意味着子类在堆区开辟的内存没有被释放，即内存泄漏
+注意：这里没有调用子类Cat的析构函数，也就意味着子类在堆区开辟的内存没有被释放，即内存泄漏
 */
 void test1() {
     Animal * cat = new Cat("Tom");

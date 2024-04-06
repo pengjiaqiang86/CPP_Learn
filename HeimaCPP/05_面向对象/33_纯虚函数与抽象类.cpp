@@ -7,6 +7,7 @@ using namespace std;
 
 在多态中，父类虚函数的实现是毫无意义的，主要都是调用子类重写的内容
 因此可以将虚函数改为纯虚函数。当类中有了纯虚函数，这个类成为抽象类
+
 语法：virtual 返回值类型 函数名(参数列表) = 0;
 特点：抽象类无法实例化对象；子类必须重写父类的纯虚函数，否则也属于抽象类
 */
@@ -43,6 +44,10 @@ public:
 
 int main(int argc, char const *argv[])
 {
+    // 函数 "AbstractCalculator::getResult" 是纯虚拟函数
+    // 不允许使用抽象类类型 "AbstractCalculator" 的对象
+    // AbstractCalculator * cal0 = new AbstractCalculator; // error
+
     AbstractCalculator *cal = new AddCalculator();
     cal->m_Num1 = 10;
     cal->m_Num2 = 20;

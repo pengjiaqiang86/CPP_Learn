@@ -25,7 +25,7 @@ void writeTxt() {
     cout << "Write to file" << endl;
 
     ofstream ofs;
-    ofs.open("write_to_txt.txt", ios::out);
+    ofs.open("01_FileText.txt", ios::out);
     ofs << "This is plain text." << endl;
     ofs << "This is the second line of the file." << endl;
     ofs.close();
@@ -35,7 +35,7 @@ void readTxt() {
     cout << "Read file" << endl;
 
     ifstream ifs;
-    ifs.open("write_to_txt.txt", ios::in);
+    ifs.open("01_FileText.txt", ios::in);
     
     // 判断是否成功打开文件
     if (ifs.is_open()) {
@@ -72,6 +72,7 @@ void readTxt() {
 }
 
 class Person {
+
 public:
     char m_Name[32]; // 写入文件时，这里推荐用char，用string可能有问题
     int m_Age;
@@ -83,7 +84,7 @@ void writeBinary() {
     Person person = {"Tom", 6};
 
     ofstream ofs;
-    ofs.open("write_to_binary.bin", ios::out | ios::binary);
+    ofs.open("01_FileBinary.bin", ios::out | ios::binary);
     ofs.write((const char *)&person, sizeof(Person));
     ofs.close();
 }
@@ -94,7 +95,7 @@ void readBinary() {
     Person person;
 
     ifstream ifs;
-    ifs.open("write_to_binary.bin", ios::in | ios::binary);
+    ifs.open("01_FileBinary.bin", ios::in | ios::binary);
 
     if (ifs.is_open()) {
         ifs.read((char *)&person, sizeof(Person));
@@ -109,8 +110,8 @@ void readBinary() {
 
 int main(int argc, char const *argv[])
 {
-    // writeTxt();
-    // readTxt();
+    writeTxt();
+    readTxt();
 
     writeBinary();
     readBinary();

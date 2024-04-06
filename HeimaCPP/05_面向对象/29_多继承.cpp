@@ -32,6 +32,23 @@ public:
     int m_B;
 };
 
+/*
+查看Son类内部结构
+命令：切换到文件所在路径；VS Developer Command Prompt；cl/d1 reportSingleClassLayoutSon 29_多继承.cpp
+
+class Son       size(16):
+        +---
+ 0      | +--- (base class Base1)
+ 0      | | m_A
+        | +---
+ 4      | +--- (base class Base2)
+ 4      | | m_A
+ 8      | | m_B
+        | +---
+12      | m_C
+        +---
+*/
+
 class Son : public Base1, public Base2 {
 
 public:

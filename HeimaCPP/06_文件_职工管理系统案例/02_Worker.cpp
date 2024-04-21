@@ -1,6 +1,6 @@
 #include <iostream>
 # include <string>
-#include "worker.h"
+#include "02_Worker.h"
 
 using namespace std;
 
@@ -14,8 +14,8 @@ Employee::Employee(int id, string name, int deptId)
 
 void Employee::showInfo()
 {
-    cout << "ID: " << this->m_Id << endl;
-    cout << "Name: " << this->m_Name << endl;
+    cout << "ID: " << this->m_Id << "\t\t";
+    cout << "Name: " << this->m_Name << "\t\t";
     cout << "Department ID: " << this->m_DeptId << endl;
 }
 
@@ -23,7 +23,6 @@ string Employee::getDeptName()
 {
     return "Employee";
 }
-
 
 
 Manager::Manager(int id, string name, int deptId)
@@ -35,8 +34,8 @@ Manager::Manager(int id, string name, int deptId)
 
 void Manager::showInfo()
 {
-    cout << "ID: " << this->m_Id << endl;
-    cout << "Name: " << this->m_Name << endl;
+    cout << "ID: " << this->m_Id << "\t\t";
+    cout << "Name: " << this->m_Name << "\t\t";
     cout << "Department ID: " << this->m_DeptId << endl;
 }
 
@@ -55,8 +54,8 @@ Boss::Boss(int id, string name, int deptId)
 
 void Boss::showInfo()
 {
-    cout << "ID: " << this->m_Id << endl;
-    cout << "Name: " << this->m_Name << endl;
+    cout << "ID: " << this->m_Id << "\t\t";
+    cout << "Name: " << this->m_Name << "\t\t";
     cout << "Department ID: " << this->m_DeptId << endl;
 }
 

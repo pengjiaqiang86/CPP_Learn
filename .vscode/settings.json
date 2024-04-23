@@ -56,5 +56,6 @@
         "optional": "cpp",
         "string_view": "cpp",
         "sstream": "cpp"
-    }
+    },
+    "C_Cpp.intelliSenseEngineFallback": "enabled"
 }

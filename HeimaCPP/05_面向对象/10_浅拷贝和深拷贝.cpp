@@ -9,36 +9,36 @@ using namespace std;
 
 ????
     ??????????????????
-    ????????Ð½??Ð³????????????
+    ????????§ß??§Ô????????????
 */
 
 class Person {
 public:
     Person() {
-        cout << "Personæ— å‚æž„é€ å‡½æ•°" << endl;
+        cout << "PersonÎÞ²Î¹¹Ôìº¯Êý" << endl;
     }
 
     Person(string name, int age) {
         m_Name = name;
         m_Age = new int(age); // ???????????????
-        cout << "Personæœ‰å‚æž„é€ å‡½æ•°" << endl;
+        cout << "PersonÓÐ²Î¹¹Ôìº¯Êý" << endl;
     }
 
     Person(const Person& p) {
         m_Name = p.m_Name;
         m_Age = p.m_Age; // ????????????????????
         // m_Age = new int(*p.m_Age);
-        cout << "Personæ‹·è´æž„é€ å‡½æ•°" << endl;
+        cout << "Person¿½±´¹¹Ôìº¯Êý" << endl;
     }
 
     ~Person() {
-        // å¦‚æžœä¸ä¸ºNULLï¼Œå…ˆåˆ é™¤ï¼Œç„¶åŽç½®ä¸ºNULL
+        // Èç¹û²»ÎªNULL£¬ÏÈÉ¾³ý£¬È»ºóÖÃÎªNULL
         if (m_Age != NULL) {
             delete m_Age;
             m_Age = NULL;
         }
 
-        cout << "Personæžæž„å‡½æ•°" << endl;
+        cout << "PersonÎö¹¹º¯Êý" << endl;
     }
 
 public:

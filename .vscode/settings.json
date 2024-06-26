@@ -67,7 +67,8 @@
         "iomanip": "cpp",
         "mutex": "cpp",
         "thread": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "numeric": "cpp"
     },
     "C_Cpp.intelliSenseEngineFallback": "enabled"
 }
